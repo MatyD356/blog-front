@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './App.scss';
+import Post from './Post';
 
 function App() {
   const [posts, setPosts] = useState<any>([]);
@@ -19,7 +20,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         {!posts
           ? <p>loading</p>
-          : posts.map((post: any) => <p key={post._id}>{post.title}</p>)
+          : posts.map((post: any) => <Post data={post} key={post._id} />)
         }
       </header>
     </div>
